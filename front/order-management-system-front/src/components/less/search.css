@@ -1,0 +1,21 @@
+.search {
+  background-color: dodgerblue;
+  height: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search .search-text {
+  background-color: white;
+  height: 80%;
+  width: 90%;
+  color: #aeaeae;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search .search-text p {
+  margin: 0 2vw;
+}
+/*# sourceMappingURL=search.css.map */
