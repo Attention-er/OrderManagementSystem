@@ -1,0 +1,116 @@
+.business {
+  padding: 0;
+}
+.business li {
+  width: 100%;
+  display: flex;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1vw;
+  border-bottom-color: #AEAEAE;
+  padding: 2vw 0;
+}
+.business li .business-left img {
+  width: 20vw;
+  height: 20vw;
+  margin: 0 3vw;
+}
+.business li .business-right {
+  width: 70vw;
+}
+.business li .business-right .businessHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vw 0;
+}
+.business li .business-right .businessHead p {
+  font-size: larger;
+}
+.business li .business-right .businessStar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vw 0;
+}
+.business li .business-right .businessStar .businessStarLeft {
+  display: flex;
+  align-items: center;
+}
+.business li .business-right .businessStar .businessStarLeft i {
+  font-size: small;
+  color: gold;
+  margin: 0 0.5vw;
+}
+.business li .business-right .businessStar .businessStarLeft p {
+  font-size: small;
+  color: #808080;
+  margin: 0 2vw;
+}
+.business li .business-right .businessStar .businessStarRight {
+  background-color: #1E90FF;
+  color: white;
+  font-size: small;
+  padding: 0.6vw;
+  border-radius: 1vw;
+}
+.business li .business-right .businessDeliver {
+  font-size: small;
+  color: #808080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vw 0;
+}
+.business li .business-right .businessExplain span {
+  border-style: solid;
+  border-color: #AEAEAE;
+  border-width: thin;
+  font-size: small;
+  color: #808080;
+  padding: 0.2vw;
+  margin: 1vw 0;
+}
+.business li .business-right .businessNew {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vw 0;
+}
+.business li .business-right .businessNew .businessNewLeft {
+  display: flex;
+  align-items: center;
+}
+.business li .business-right .businessNew .businessNewLeft div {
+  background-color: green;
+  color: white;
+  font-size: small;
+  padding: 0.6vw;
+  border-radius: 1vw;
+  margin-right: 2vw;
+}
+.business li .business-right .businessNew .businessNewLeft p {
+  font-size: small;
+  color: #808080;
+}
+.business li .business-right .businessNew .businessNewRight {
+  font-size: small;
+  color: #AEAEAE;
+}
+.business li .business-right .businessTe {
+  display: flex;
+  align-items: center;
+  margin: 1vw 0;
+}
+.business li .business-right .businessTe div {
+  background-color: burlywood;
+  color: white;
+  font-size: small;
+  padding: 0.6vw;
+  border-radius: 1vw;
+  margin-right: 2vw;
+}
+.business li .business-right .businessTe p {
+  font-size: small;
+  color: #808080;
+}
+/*# sourceMappingURL=Business.css.map */
