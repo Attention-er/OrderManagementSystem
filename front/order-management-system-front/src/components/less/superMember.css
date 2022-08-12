@@ -1,0 +1,29 @@
+.super-member {
+  width: 90%;
+  height: 12vw;
+  background-color: darkorange;
+  margin: 3vw auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3vw;
+}
+.super-member .super-member-left {
+  display: flex;
+  align-items: center;
+}
+.super-member img {
+  width: 7vw;
+  height: 7vw;
+}
+.super-member h4 {
+  margin: 0 1vw;
+}
+.super-member p {
+  color: #111111;
+  font-size: small;
+}
+.super-member a {
+  font-size: small;
+}
+/*# sourceMappingURL=superMember.css.map */

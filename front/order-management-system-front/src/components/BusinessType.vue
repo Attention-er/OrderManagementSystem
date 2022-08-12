@@ -1,7 +1,7 @@
 <template>
   <ul class="business-type">
     <li v-for="businessType in businessTypes">
-      <img src="@/components/img/dcfl01.png"/>
+      <img :src="businessType.img"/>
       <p>{{ businessType.name }}</p>
     </li>
   </ul>
@@ -10,48 +10,48 @@
 <script setup lang="ts">
 
 import {ref} from "vue";
-
+import img from '@/components/img/dcfl01.png';
 const businessTypes = ref()
 businessTypes.value = [
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   },
   {
     name: '美食',
-    img: "@/components/img/dcfl01.png"
+    img: img
   }
 ]
 
@@ -59,6 +59,6 @@ businessTypes.value = [
 
 <style lang="less" scoped>
 
-@import "less/businessType.less";
+@import "./less/businessType.less";
 
 </style>
