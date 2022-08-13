@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.binan.buy.model.User">
+
+    <!--Implements method: User findByUser(User user)-->
+    <select id="findByUser" resultType="User" parameterType="User">
+        select * from user where name = #{name} and password = #{password}
+    </select>
+
+    <!--Implements method: int insert(User user)-->
+    <insert id="insert" parameterType="User">
+        insert into user(name, password) values (#{name},#{password})
+    </insert>
+
+</mapper>

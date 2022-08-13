@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binan.buy.dao.ITypesMapper">
+
+    <!--查询商家类型信息-->
+    <resultMap id="typesMap" type="com.binan.buy.model.Types">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="img" column="img"/>
+    </resultMap>
+    <select id="findAll" resultMap="typesMap">
+        select *
+        from types
+    </select>
+
+</mapper>

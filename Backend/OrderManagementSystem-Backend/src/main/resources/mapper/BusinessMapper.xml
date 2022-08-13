@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binan.buy.dao.IBusinessMapper">
+
+    <!--查询商家信息-->
+    <resultMap id="businessMap" type="com.binan.buy.model.Business">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="img" column="img"/>
+        <result property="startPrice" column="startPrice"/>
+        <result property="deliveryPrice" column="deliveryPrice"/>
+        <result property="explain" column="explain"/>
+    </resultMap>
+    <select id="findAll" resultMap="businessMap">
+        select *
+        from business
+    </select>
+
+</mapper>

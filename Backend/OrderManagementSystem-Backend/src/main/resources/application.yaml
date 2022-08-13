@@ -1,0 +1,29 @@
+# 应用名称
+spring.application.name: ordermanagementsystem
+
+# 应用服务 WEB 访问端口
+server:
+  servlet:
+    context-path: /system
+  port: 8080
+
+#数据库信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.93.190.166:3306/elm?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: dijiaio14257A!
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+#Spring集成Mybatis
+mybatis:
+  type-aliases-package: com.binan.buy.model
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+#上传文件的路径
+# upload:
+#  dir: E://movie/img

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binan.buy.dao.IFoodMapper">
+
+    <!--根据商家Id查询售卖食物-->
+    <resultMap id="foodMap" type="com.binan.buy.model.Food">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="img" column="img"/>
+        <result property="explain" column="explain"/>
+        <result property="price" column="price"/>
+        <result property="businessId" column="businessId"/>
+    </resultMap>
+
+    <select id="selFoodById" resultMap="foodMap" parameterType="int">
+        SELECT
+            *
+        FROM
+            food
+        WHERE
+            food.businessId = #{fid}
+    </select>
+</mapper>
