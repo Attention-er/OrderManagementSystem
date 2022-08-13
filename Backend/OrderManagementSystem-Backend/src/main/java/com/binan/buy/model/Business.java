@@ -14,6 +14,7 @@ public class Business {
     private int id;
     private String name;
     private String img;
+    private double rate;
     private double startPrice;
     private double deliveryPrice;
     private String explain;

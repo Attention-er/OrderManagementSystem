@@ -17,11 +17,12 @@ public class ElmFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletResponse res = (HttpServletResponse) response;
         //注意：这里设置只允许http://localhost:8081进行跨域访问
-        res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8848");
-        res.setHeader("Access-Control-Allow-Credentials", "true");
-        res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
-        res.setHeader("Access-Control-Max-Age", "3628800");
-        res.setHeader("Access-Control-Allow-Headers", "x-requested-with,Authorization");
+//        res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8848");
+//        res.setHeader("Access-Control-Allow-Origin", "http://localhost:8081");
+//        res.setHeader("Access-Control-Allow-Credentials", "true");
+//        res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
+//        res.setHeader("Access-Control-Max-Age", "3628800");
+//        res.setHeader("Access-Control-Allow-Headers", "x-requested-with,Authorization");
         chain.doFilter(request, response);
     }
 }
