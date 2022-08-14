@@ -10,8 +10,8 @@
     </parent>
 
     <groupId>com.binan</groupId>
-    <artifactId>Buy</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>ELM-BackEnd</artifactId>
+    <version>FIRST-WEEK</version>
     <name>OrderManagementSystem</name>
     <description>OrderManagementSystem</description>
 

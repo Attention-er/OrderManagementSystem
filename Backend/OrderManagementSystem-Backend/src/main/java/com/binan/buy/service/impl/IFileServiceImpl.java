@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Service
 public class IFileServiceImpl implements IFileService {
-    String preD = "C:\\Users\\26819\\Pictures\\";
+    String preD = "D:\\";
     @Override
     public ResponseEntity<FileSystemResource> getFile(String filename) {
         File file = new File(preD+filename);

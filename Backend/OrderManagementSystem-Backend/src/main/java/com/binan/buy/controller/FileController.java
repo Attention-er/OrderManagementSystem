@@ -22,9 +22,10 @@ public class FileController {
     public void setFileService(IFileService fileService){
         this.fileService = fileService;
     }
-    @GetMapping(value = "getFile/{filename}")
+    @GetMapping(value = "getFile")
     @ResponseBody
-    public ResponseEntity<FileSystemResource> getFile(@PathVariable String filename) throws IOException{
+    public ResponseEntity<FileSystemResource> getFile(String filename) throws IOException{
+        System.out.println("输出文件"+filename);
         return fileService.getFile(filename);
     }
 
