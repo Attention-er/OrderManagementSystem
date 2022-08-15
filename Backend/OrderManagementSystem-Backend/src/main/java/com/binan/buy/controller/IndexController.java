@@ -30,7 +30,7 @@ public class IndexController {
     }
 
     @GetMapping("/businessesbytype")
-    public List<Business> selBusinessesByType(@RequestParam(value = "typeId", required = true, defaultValue = "0") int typeId){
+    public List<Business> selBusinessesByType(@RequestParam(value = "typeId", required = true, defaultValue = "0") Integer typeId){
         List<Business> bss = iBusinessService.findByTypeId(typeId);
         return bss;
     }

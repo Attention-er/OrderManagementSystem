@@ -27,7 +27,7 @@ public class FileController {
     @GetMapping(value = "/getFile")
     @ResponseBody
     public ResponseEntity<FileSystemResource> getFile(String filename) throws IOException{
-        System.out.println("输出文件"+filename);
+//        System.out.println("输出文件"+filename);
         return fileService.getFile(filename);
     }
 
