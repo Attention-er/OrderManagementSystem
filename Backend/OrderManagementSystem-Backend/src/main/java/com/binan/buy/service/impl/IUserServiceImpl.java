@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class IUserServiceImpl implements IUserService {
+
     @Autowired
     private IUserMapper userMapper;
+
     @Override
     public boolean hasUser(User user) {
         return userMapper.findByUser(user).size()>0;

@@ -19,4 +19,12 @@
         from business
     </select>
 
+    <!--Implement method: List<Business> findAllByTypeId() -->
+    <select id="findAllByTypeId" parameterType="int" resultMap="businessMap">
+        select bt.businessId id,b.name,b.img,b.rate,b.startPrice,b.deliveryPrice,b.explain
+        from business_type bt
+        left join business b
+        on b.id = bt.businessId
+        where bt.typeId = #{typeId}
+    </select>
 </mapper>

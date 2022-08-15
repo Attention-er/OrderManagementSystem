@@ -15,8 +15,10 @@ public class IBusinessServiceImpl implements IBusinessService {
 
     @Autowired
     private IBusinessMapper iBusinessMapper;
+
     @Autowired
     private ITypesMapper iTypesMapper;
+
     @Override
     public List<Business> findAllBusiness() {
         return iBusinessMapper.findAll();
@@ -25,5 +27,10 @@ public class IBusinessServiceImpl implements IBusinessService {
     @Override
     public List<Types> findAllTypes() {
         return iTypesMapper.findAll();
+    }
+
+    @Override
+    public List<Business> findByTypeId(int typeId) {
+        return iBusinessMapper.findAllByTypeId(typeId);
     }
 }

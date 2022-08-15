@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class IFoodServiceImpl implements IFoodService {
+
     @Autowired
     private IFoodMapper iFoodMapper;
+
     @Override
     public List<Food> selFoodById(int id) {
         return iFoodMapper.selFoodById(id);

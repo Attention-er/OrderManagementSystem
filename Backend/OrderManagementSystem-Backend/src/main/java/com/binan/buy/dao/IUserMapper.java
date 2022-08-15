@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public interface IUserMapper {
+
     //通过账号密码查询是否有用户存在
     List<User> findByUser(User user);
 

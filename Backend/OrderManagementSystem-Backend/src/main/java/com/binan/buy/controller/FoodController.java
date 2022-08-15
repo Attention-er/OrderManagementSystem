@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin
 public class FoodController {
+
     @Autowired
     private IFoodService iFoodService;
+
     //根据前端返回商户id 查询并获取相应的售货食物
     @GetMapping("/foodList")
     public FoodDto selFoodById(int id) {

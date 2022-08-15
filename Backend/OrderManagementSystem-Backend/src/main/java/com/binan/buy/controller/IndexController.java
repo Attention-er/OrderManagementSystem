@@ -16,18 +16,25 @@ import java.util.List;
 @Component
 @RestController
 @CrossOrigin
+@RequestMapping("/index")
 public class IndexController {
 
     @Autowired
     private IBusinessService iBusinessService;
 
-    @GetMapping("/index")
-    public IndexDto index() {
+    @GetMapping("/fullpage")
+    public IndexDto fullpage() {
         List<Business> bss = iBusinessService.findAllBusiness();
         List<Types> bts = iBusinessService.findAllTypes();
         IndexDto indexDto=new IndexDto();
         indexDto.setBss(bss);
         indexDto.setBts(bts);
         return  indexDto;
+    }
+
+    @GetMapping("/businessesbytype")
+    public List<Business> selBusinessesByType(int typeId){
+        List<Business> bss = iBusinessService.findByTypeId(typeId);
+        return bss;
     }
 }

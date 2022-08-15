@@ -18,10 +18,12 @@ import java.io.IOException;
 @RequestMapping(value = "/file")
 public class FileController {
     IFileService fileService;
+
     @Autowired
     public void setFileService(IFileService fileService){
         this.fileService = fileService;
     }
+
     @GetMapping(value = "getFile")
     @ResponseBody
     public ResponseEntity<FileSystemResource> getFile(String filename) throws IOException{
