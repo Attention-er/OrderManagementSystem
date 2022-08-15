@@ -1,6 +1,6 @@
 <template>
   <div class="head">
-    <font-awesome-icon :icon="['fas','map-market']"/>
+    <font-awesome-icon :icon="['fas','map-marked']"/>
     <h3>北华航天</h3>
     <font-awesome-icon :icon="['fas','caret-down']"/>
   </div>

@@ -1,10 +1,12 @@
 <template>
-  <div class="search">
-    <div class="search-text">
-      <font-awesome-icon :icon="['fas','search']"/>
-      <p>搜索饿了么商家、商品名称</p>
+  <el-affix :offset="0">
+    <div class="search">
+      <div class="search-text">
+        <font-awesome-icon :icon="['fas','search']"/>
+        <p>搜索饿了么商家、商品名称</p>
+      </div>
     </div>
-  </div>
+  </el-affix>
 </template>
 
 <script lang="ts" setup>

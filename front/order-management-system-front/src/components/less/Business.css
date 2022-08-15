@@ -9,7 +9,12 @@
   border-bottom-color: #AEAEAE;
   padding: 2vw 0;
 }
-.business li .business-left img {
+.el-image {
+  width: 20vw;
+  height: 20vw;
+  margin: 0 3vw;
+}
+.business li .business-left el-image {
   width: 20vw;
   height: 20vw;
   margin: 0 3vw;

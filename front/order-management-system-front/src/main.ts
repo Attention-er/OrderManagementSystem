@@ -5,7 +5,7 @@ import store from './store'
 import axios from "axios";
 import VueAxios from "vue-axios";
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'api';
+axios.defaults.baseURL = '/api';
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 /* add some free styles */
@@ -27,6 +27,5 @@ import {} from '@fortawesome/free-regular-svg-icons'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 library.add(faFileText,faCompass,faHome,faUser,faFilter,faCaretDown,faStar,faMobile,faTwitter, faUserSecret,faSearch,faMapMarked,faCaretDown)
-
 const app = createApp(App)
 app.use(ElementPlus).use(VueAxios, axios).component('font-awesome-icon', FontAwesomeIcon).use(store).use(router).mount('#app')
