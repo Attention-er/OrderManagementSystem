@@ -17,7 +17,11 @@
   align-items: center;
   justify-content: space-around;
 }
-.business-type li img {
+.business-type li el-image {
+  width: 12vw;
+  height: 12vw;
+}
+.el-image {
   width: 12vw;
   height: 12vw;
 }

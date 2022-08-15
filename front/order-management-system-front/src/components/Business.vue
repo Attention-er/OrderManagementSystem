@@ -2,7 +2,8 @@
   <ul class="business">
     <li v-for="business in businesses">
       <div class="business-left">
-        <img :src="business.img" :alt="business.name"/>
+<!--        <el-image src="http://localhost:8080/system/image/getImage" />-->
+        <el-image :src="'http://192.168.1.6:8080/system/file/getFile?filename='+business.img" :alt="business.name"/>
       </div>
       <div class="business-right">
         <div class="businessHead">
@@ -13,7 +14,7 @@
         </div>
         <div class="businessStar">
           <div class="businessStarLeft">
-            <el-rate v-model="business.rate" allow-half/>
+            <el-rate disabled v-model="business.rate" allow-half/>
             <p>{{ business.rate }} 月售{{ business.numberOfOrders }}</p>
           </div>
           <div class='businessStarRight'>
@@ -30,7 +31,7 @@
           </div>
         </div>
         <div class='businessExplain'>
-          <span>各种饺子</span>
+          <span>{{business.explain}}</span>
         </div>
         <div class='businessNew'>
           <div class='businessNewLeft'>
@@ -52,27 +53,15 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
-import wjjz from '@/components/img/sj01.png'
-import xgfdfg from '@/components/img/sj02.png'
+import axios from "axios";
 
-const businesses = ref([
-  {
-    name: '万家饺子(软件园E18号店)',
-    img: wjjz,
-    rate: 4.9,
-    numberOfOrders: 315,
-    startPrice: 15.0,
-    deliveryPrice: 3.0
-  },
-  {
-    name: '小锅饭豆腐馆（全运店）',
-    img: xgfdfg,
-    rate: 3.5,
-    numberOfOrders: 345,
-    startPrice: 15.0,
-    deliveryPrice: 3.0
-  }
-])
+const businesses = ref()
+const getBusiness = () => {
+  axios.get("index").then((res) => {
+    businesses.value = res.data.bss;
+  })
+}
+getBusiness()
 </script>
 
 <style lang="less" scoped>
