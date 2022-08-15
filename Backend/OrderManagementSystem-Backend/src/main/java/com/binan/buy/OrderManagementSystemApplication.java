@@ -28,7 +28,7 @@ public class OrderManagementSystemApplication
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.iqiyi.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.binan.buy.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

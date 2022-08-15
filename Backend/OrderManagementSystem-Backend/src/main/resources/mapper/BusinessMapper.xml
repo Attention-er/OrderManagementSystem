@@ -21,9 +21,9 @@
 
     <!--Implement method: List<Business> findAllByTypeId() -->
     <select id="findAllByTypeId" parameterType="int" resultMap="businessMap">
-        select bt.businessId id,b.name,b.img,b.rate,b.startPrice,b.deliveryPrice,b.explain
-        from business_type bt
-        left join business b
+        select bt.businessId as id,b.name as bname,b.img as img,b.rate as rate,b.startPrice as startPrice,b.deliveryPrice as deliveryPrice,b.explain as explain
+        from business_type as bt
+        left join business as b
         on b.id = bt.businessId
         where bt.typeId = #{typeId}
     </select>

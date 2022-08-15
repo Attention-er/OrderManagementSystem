@@ -6,10 +6,7 @@ import com.binan.buy.dto.IndexDto;
 import com.binan.buy.service.IBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,7 +30,7 @@ public class IndexController {
     }
 
     @GetMapping("/businessesbytype")
-    public List<Business> selBusinessesByType(int typeId){
+    public List<Business> selBusinessesByType(@RequestParam(value = "typeId", required = true, defaultValue = "0") int typeId){
         List<Business> bss = iBusinessService.findByTypeId(typeId);
         return bss;
     }

@@ -76,7 +76,7 @@
             <version>2.1.1</version>
         </dependency>
 
-        <!-- Swagger -->
+        <!-- Swagger URL:http://localhost:<port>/<context-path>/swagger-ui/index.html -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
@@ -89,6 +89,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${project.parent.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>
