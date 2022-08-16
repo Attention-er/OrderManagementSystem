@@ -2,7 +2,8 @@ package com.binan.buy.service.impl;
 
 import com.binan.buy.dao.IOrder_foodMapper;
 import com.binan.buy.handler.FoodInfoMapResultHandler;
-import com.binan.buy.model.Food_order;
+import com.binan.buy.model.Food;
+import com.binan.buy.model.FoodOrder;
 import com.binan.buy.service.IOrder_foodService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -21,7 +22,7 @@ public class IOrder_foodServiceImpl implements IOrder_foodService {
     private SqlSessionFactory sqlSessionFactory;
 
     @Override
-    public boolean saveFoodInfoOfOrder(Food_order foodOrder) {
+    public boolean saveFoodInfoOfOrder(FoodOrder foodOrder) {
         boolean ret = true;
         int orderId = foodOrder.getId();
         Map<Integer, Integer> foodInfoMap = foodOrder.getFoodInfoMap();
@@ -37,7 +38,7 @@ public class IOrder_foodServiceImpl implements IOrder_foodService {
     }
 
     @Override
-    public Map<String, Integer> findFoodInfoByOrderId(Food_order foodOrder) {
+    public Map<String, Integer> findFoodInfoByOrderId(FoodOrder foodOrder) {
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         FoodInfoMapResultHandler mapResultHandler = new FoodInfoMapResultHandler();
         sqlSession.select("com.binan.buy.dao.IOrder_foodMapper.findFoodInfoByOrderId",foodOrder.getId(),mapResultHandler);

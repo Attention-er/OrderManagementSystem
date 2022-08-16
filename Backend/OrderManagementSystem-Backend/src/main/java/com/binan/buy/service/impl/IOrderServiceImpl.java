@@ -1,7 +1,8 @@
 package com.binan.buy.service.impl;
 
 import com.binan.buy.dao.IOrderMapper;
-import com.binan.buy.model.Food_order;
+import com.binan.buy.model.FoodOrder;
+import com.binan.buy.model.FoodOrder;
 import com.binan.buy.model.User;
 import com.binan.buy.service.IOrderService;
 import com.binan.buy.service.IOrder_foodService;
@@ -20,7 +21,7 @@ public class IOrderServiceImpl implements IOrderService {
     private IOrder_foodService iOrderFoodService;
 
     @Override
-    public boolean saveOrderAndFoodInfo(Food_order foodOrder) {
+    public boolean saveOrderAndFoodInfo(FoodOrder foodOrder) {
         boolean ret;
         if(iOrderMapper.insertOrder(foodOrder)>0 && iOrderFoodService.saveFoodInfoOfOrder(foodOrder)){
             ret = true;
@@ -31,7 +32,7 @@ public class IOrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public List<Food_order> findAllByUserId(User user) {
+    public List<FoodOrder> findAllByUserId(User user) {
         return iOrderMapper.findAllByUserId(user.getId());
     }
 }

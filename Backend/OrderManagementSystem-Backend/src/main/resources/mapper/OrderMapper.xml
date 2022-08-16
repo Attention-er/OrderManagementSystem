@@ -4,40 +4,49 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.binan.buy.dao.IOrderMapper">
-    <resultMap id="foodOrder" type="Food_order">
-        <id property="id" column="id" />
-        <result property="businessId" column="businessId" />
-        <result property="userId" column="userId" />
-        <result property="address" column="address" />
-        <result property="price" column="price" />
-        <result property="pay" column="pay" />
+    <resultMap id="foodOrder" type="com.binan.buy.model.OrderOutput">
+        <id property="id" column="id"/>
+        <result property="businessId" column="businessId"/>
+        <result property="userId" column="userId"/>
+        <result property="address" column="address"/>
+        <result property="price" column="price"/>
+        <result property="payState" column="pay"/>
     </resultMap>
 
     <!-- Implement method: List<Food_order> findAll() -->
     <select id="findAll" resultMap="foodOrder">
-        select * from food_order
+        select *
+        from food_order
     </select>
 
     <!-- Implement method: Food_order findOrderById(int id) -->
     <select id="findOrderById" resultMap="foodOrder" parameterType="int">
-        select * from food_order where id = #{id}
+        select *
+        from food_order
+        where id = #{id}
     </select>
 
     <!-- Implement method: List<Food_order> findAllByUserId(int userId) -->
     <select id="findAllByUserId" parameterType="int" resultMap="foodOrder">
-        select * from food_order where userId = #{userId}
+        select *
+        from food_order
+        where userId = #{userId}
     </select>
 
     <!-- Implement method: int insertOrder(Food_order food_order) -->
-    <insert id="insertOrder" parameterType="Food_order" useGeneratedKeys="true" keyProperty="id">
-        insert into food_order(businessId,userId,address,price,pay)
-        values (#{businessId},#{userId},#{address},#{price},#{pay})
+    <insert id="insertOrder" parameterType="FoodOrder" useGeneratedKeys="true" keyProperty="id">
+        insert into food_order(businessId, userId, address, price, pay)
+        values (#{businessId}, #{userId}, #{address}, #{price}, #{pay})
     </insert>
 
     <!-- Implement method: int updateOrder(Food_order food_order) -->
-    <update id="updateOrder" parameterType="Food_order">
+    <update id="updateOrder" parameterType="FoodOrder">
         update food_order
-        set businessId=#{businessId},userId=#{userId},address=#{address},price=#{price},pay=#{pay}
-        where id=#{id}
+        set businessId=#{businessId},
+            userId=#{userId},
+            address=#{address},
+            price=#{price},
+            pay=#{pay}
+        where id = #{id}
     </update>
 </mapper>

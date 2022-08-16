@@ -1,11 +1,12 @@
 package com.binan.buy.dao;
 
 import com.binan.buy.model.Business;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface IBusinessMapper {
     //查询商家列表
     List<Business> findAll();

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.binan.buy.dao.OrderFoodMapper">
+    <!-- resultMap中type为HashMap不能指定泛型，fnum自动接收为Long类型和返回类型Integer冲突，
+         通过指定result的javaType来设置映射结果的类型 -->
+    <!--食物-->
+    <resultMap id="foodMap" type="com.binan.buy.model.Food">
+        <id property="id" column="food_id"/>
+        <result property="name" column="food_name"/>
+        <result property="img" column="food_img"/>
+        <result property="explain" column="food_explain"/>
+        <result property="price" column="food_price"/>
+        <result property="businessId" column="business_id"/>
+    </resultMap>
+    <resultMap id="foodInfo" type="com.binan.buy.model.FoodNum">
+        <result property="num" column="food_num" javaType="Integer"/>
+        <association property="food" resultMap="foodMap"
+                     javaType="com.binan.buy.model.Food"/>
+    </resultMap>
+    <!--查询商家信息-->
+    <resultMap id="businessInfo" type="com.binan.buy.model.Business">
+        <id property="id" column="business_id"/>
+        <result property="name" column="business_name"/>
+        <result property="img" column="business_img"/>
+        <result property="rate" column="rate"/>
+        <result property="startPrice" column="startPrice"/>
+        <result property="deliveryPrice" column="deliveryPrice"/>
+        <result property="explain" column="business_explain"/>
+    </resultMap>
+    <resultMap id="orderOutput" type="com.binan.buy.model.OrderOutput">
+        <id property="id" column="order_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="address" column="address"/>
+        <result property="price" column="price"/>
+        <result property="payState" column="payState"/>
+        <association property="business" resultMap="businessInfo"/>
+        <collection property="foodNum" resultMap="foodInfo"/>
+    </resultMap>
+
+    <select id="selectOrderById" resultMap="orderOutput">
+        select fo.id           as order_id,
+               fo.userId       as user_id,
+               fo.address      as address,
+               fo.price        as price,
+               fo.pay          as payState,
+               b.id            as business_id,
+               b.name          as business_name,
+               b.img           as business_img,
+               b.rate          as rate,
+               b.startPrice    as startPrice,
+               b.deliveryPrice as deliveryPrice,
+               b.`explain`     as 'business_explain',
+               f.id            as food_id,
+               f.name          as food_name,
+               f.img           as food_img,
+               f.`explain`     as food_explain,
+               f.price         as food_price,
+               f.businessId    as business_id,
+               o.food_num      as food_num
+        from food_order fo
+                 left join business b on fo.businessId = b.id
+                 left join order_food o on fo.id = o.order_id
+                 left join food f on o.food_id = f.id
+        where fo.userId = #{id}
+    </select>
+
+    <insert id="insertOrder" parameterType="com.binan.buy.model.Order" useGeneratedKeys="true" keyProperty="id">
+        insert into food_order(businessId, userId, address, price, pay)
+        values (#{businessId}, #{userId}, #{address}, #{price}, #{pay})
+    </insert>
+    <insert id="insertFoodNum">
+        insert into order_food(order_id, food_id, food_num)
+        values (#{order_id}, #{food_id}, #{food_num})
+    </insert>
+
+</mapper>
+

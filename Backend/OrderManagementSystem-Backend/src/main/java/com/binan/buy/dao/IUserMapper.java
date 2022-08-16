@@ -1,11 +1,12 @@
 package com.binan.buy.dao;
 
 import com.binan.buy.model.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface IUserMapper {
 
     //通过账号密码查询是否有用户存在

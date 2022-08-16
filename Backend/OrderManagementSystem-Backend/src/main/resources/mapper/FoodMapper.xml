@@ -20,6 +20,6 @@
         FROM
             food
         WHERE
-            food.businessId = #{fid}
+            food.businessId = #{id}
     </select>
 </mapper>

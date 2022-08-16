@@ -20,7 +20,6 @@
         on orf.food_id = f.id
         where orf.order_id = #{orderId}
     </select>
-
     <!-- Implement method: int insertFoodInfo(int orderId,int foodId,int foodNum) -->
     <insert id="insertFoodInfo">
         insert into order_food(order_id,food_id,food_num)
