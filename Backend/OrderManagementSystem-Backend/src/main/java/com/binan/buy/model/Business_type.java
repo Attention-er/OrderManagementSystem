@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 商家-类型中间表
  */
 public class Business_type {
-    private int id;
-    private int businessId;
-    private int typeId;
+    private Integer id;
+    private Integer businessId;
+    private Integer typeId;
 }

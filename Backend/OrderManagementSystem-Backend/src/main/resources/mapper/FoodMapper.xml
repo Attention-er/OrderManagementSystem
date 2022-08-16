@@ -5,7 +5,7 @@
 <mapper namespace="com.binan.buy.dao.IFoodMapper">
 
     <!--根据商家Id查询售卖食物-->
-    <resultMap id="foodMap" type="com.binan.buy.model.Food">
+    <resultMap id="foodMap" type="Food">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="img" column="img"/>

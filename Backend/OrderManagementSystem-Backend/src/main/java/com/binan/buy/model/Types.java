@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 类型表
  */
 public class Types {
-    private int id;
+    private Integer id;
     private String name;
     private String img;
 }

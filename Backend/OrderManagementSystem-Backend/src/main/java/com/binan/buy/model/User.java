@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 用户注册表
  */
 public class User {
-    private int id;
+    private Integer id;
     private String userName;
     private String passWord;
     private String phoneNumber;

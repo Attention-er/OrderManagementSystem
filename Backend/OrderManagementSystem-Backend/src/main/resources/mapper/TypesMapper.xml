@@ -5,7 +5,7 @@
 <mapper namespace="com.binan.buy.dao.ITypesMapper">
 
     <!--查询商家类型信息-->
-    <resultMap id="typesMap" type="com.binan.buy.model.Types">
+    <resultMap id="typesMap" type="Types">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="img" column="img"/>

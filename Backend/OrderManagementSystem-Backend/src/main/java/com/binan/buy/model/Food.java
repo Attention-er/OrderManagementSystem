@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 食物表
  */
 public class Food {
-    private int id;
+    private Integer id;
     private String name;
     private String img;
     private String explain;
-    private double price;
-    private int businessId;
+    private Double price;
+    private Integer businessId;
 }

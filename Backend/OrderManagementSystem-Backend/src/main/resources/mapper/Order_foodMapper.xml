@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.binan.buy.dao.IOrder_foodMapper">
+
+    <resultMap id="foodInfo" type="java.util.HashMap">
+        <result property="key" column="fname" />
+        <result property="value" column="fnum" />
+    </resultMap>
+
+    <!-- Implement method: Map<String,Integer> findFoodInfoByOrderId(int orderId) -->
+    <select id="findFoodInfoByOrderId" parameterType="int" resultMap="foodInfo">
+        select f.name as fname, orf.food_num as fnum
+        from order_food as orf
+        left join food as f
+        on orf.food_id = f.id
+        where orf.order_id = #{orderId}
+    </select>
+
+    <!-- Implement method: int insertFoodInfo(int orderId,int foodId,int foodNum) -->
+    <insert id="insertFoodInfo">
+        insert into order_food(order_id,food_id,food_num)
+        values (#{orderId},#{foodId},#{foodNum})
+    </insert>
+</mapper>
+

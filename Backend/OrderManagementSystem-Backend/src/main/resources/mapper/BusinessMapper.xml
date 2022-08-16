@@ -5,7 +5,7 @@
 <mapper namespace="com.binan.buy.dao.IBusinessMapper">
 
     <!--查询商家信息-->
-    <resultMap id="businessMap" type="com.binan.buy.model.Business">
+    <resultMap id="businessMap" type="Business">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="img" column="img"/>

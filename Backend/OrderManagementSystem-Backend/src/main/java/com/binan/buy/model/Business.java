@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 商家信息表
  */
 public class Business {
-    private int id;
+    private Integer id;
     private String name;
     private String img;
-    private double rate;
-    private double startPrice;
-    private double deliveryPrice;
+    private Double rate;
+    private Double startPrice;
+    private Double deliveryPrice;
     private String explain;
 
 }
