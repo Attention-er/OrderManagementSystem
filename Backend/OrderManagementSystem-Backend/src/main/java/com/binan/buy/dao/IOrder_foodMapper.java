@@ -1,10 +1,12 @@
 package com.binan.buy.dao;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 public interface IOrder_foodMapper {
 
     // 根据订单id查询所有商品信息（商品名，商品数量）

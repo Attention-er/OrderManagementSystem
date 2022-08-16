@@ -5,9 +5,11 @@
 
 <mapper namespace="com.binan.buy.dao.IOrder_foodMapper">
 
+    <!-- resultMap中type为HashMap不能指定泛型，fnum自动接收为Long类型和返回类型Integer冲突，
+         通过指定result的javaType来设置映射结果的类型 -->
     <resultMap id="foodInfo" type="java.util.HashMap">
-        <result property="key" column="fname" />
-        <result property="value" column="fnum" />
+        <result property="key" column="fname" javaType="String" />
+        <result property="value" column="fnum" javaType="Integer"/>
     </resultMap>
 
     <!-- Implement method: Map<String,Integer> findFoodInfoByOrderId(int orderId) -->

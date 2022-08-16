@@ -19,7 +19,7 @@ public class IndexController {
     @Autowired
     private IBusinessService iBusinessService;
 
-    @GetMapping("/fullpage")
+    @GetMapping("/fullPage")
     public IndexDto fullpage() {
         List<Business> bss = iBusinessService.findAllBusiness();
         List<Types> bts = iBusinessService.findAllTypes();
@@ -29,7 +29,7 @@ public class IndexController {
         return  indexDto;
     }
 
-    @GetMapping("/businessesbytype")
+    @GetMapping("/businessesByType")
     public List<Business> selBusinessesByType(@RequestParam(value = "typeId", required = true, defaultValue = "0") Integer typeId){
         List<Business> bss = iBusinessService.findByTypeId(typeId);
         return bss;

@@ -30,7 +30,13 @@ public class IBusinessServiceImpl implements IBusinessService {
     }
 
     @Override
-    public List<Business> findByTypeId(int typeId) {
+    public List<Business> findByTypeId(Integer typeId) {
         return iBusinessMapper.findAllByTypeId(typeId);
     }
+
+    @Override
+    public Business findBusinessById(Integer id) {
+        return iBusinessMapper.findById(id);
+    }
+
 }

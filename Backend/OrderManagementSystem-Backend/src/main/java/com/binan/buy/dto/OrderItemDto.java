@@ -15,7 +15,6 @@ import java.util.Map;
 public class OrderItemDto {
     // 一个订单项对应的相关信息
     private Business business;
-    private User user;
     private Food_order food_order;
     private Map<String,Integer> foodInfoMap;
 }

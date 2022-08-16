@@ -13,7 +13,9 @@ public interface IBusinessService {
     List<Types> findAllTypes();
 
     //根据typeid寻找商家信息
-    List<Business> findByTypeId(int typeId);
+    List<Business> findByTypeId(Integer typeId);
+
+    Business findBusinessById(Integer id);
 
  /*   //添加商家
     boolean insert(Business business);

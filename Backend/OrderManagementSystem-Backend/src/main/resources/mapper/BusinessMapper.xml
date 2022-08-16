@@ -14,11 +14,17 @@
         <result property="deliveryPrice" column="deliveryPrice"/>
         <result property="explain" column="explain"/>
     </resultMap>
+
+    <!--Implement method: List<Business> findAll() -->
     <select id="findAll" resultMap="businessMap">
         select *
         from business
     </select>
 
+    <!--Implement method: Business findById(int id) -->
+    <select id="findById" parameterType="int" resultMap="businessMap">
+        select * from business where id=#{id}
+    </select>
     <!--Implement method: List<Business> findAllByTypeId() -->
     <select id="findAllByTypeId" parameterType="int" resultMap="businessMap">
         select bt.businessId as id,b.name as name,b.img as img,b.rate as rate,b.startPrice as startPrice,b.deliveryPrice as deliveryPrice,b.explain as 'explain'

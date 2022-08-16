@@ -1,9 +1,11 @@
 package com.binan.buy.dao;
 
 import com.binan.buy.model.Food_order;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface IOrderMapper {
 
     // 查询所有订单

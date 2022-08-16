@@ -14,12 +14,12 @@
     </resultMap>
 
     <!-- Implement method: List<Food_order> findAll() -->
-    <select id="findAll" resultMap="foodOrderMap">
+    <select id="findAll" resultMap="foodOrder">
         select * from food_order
     </select>
 
     <!-- Implement method: Food_order findOrderById(int id) -->
-    <select id="findOrderById" resultMap="foodOrderMap" parameterType="int">
+    <select id="findOrderById" resultMap="foodOrder" parameterType="int">
         select * from food_order where id = #{id}
     </select>
 
