@@ -22,10 +22,14 @@ import {faCompass} from "@fortawesome/free-solid-svg-icons";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {} from '@fortawesome/free-regular-svg-icons'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 /* add some pro styles */
 /* add each imported icon to the library */
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 library.add(faFileText,faCompass,faHome,faUser,faFilter,faCaretDown,faStar,faMobile,faTwitter, faUserSecret,faSearch,faMapMarked,faCaretDown)
 const app = createApp(App)
+for (const [key,component] of Object.entries(ElementPlusIconsVue)){
+    app.component(key,component)
+}
 app.use(ElementPlus).use(VueAxios, axios).component('font-awesome-icon', FontAwesomeIcon).use(store).use(router).mount('#app')
