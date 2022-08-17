@@ -14,5 +14,7 @@ public interface OrderService {
      */
     List<OrderOutput> selectOrderById(Integer userId);
 
-    Boolean insertOrder(Order order);
+    Integer insertOrder(Order order);
+
+    OrderOutput selectOrderByOrderId(Integer orderId);
 }

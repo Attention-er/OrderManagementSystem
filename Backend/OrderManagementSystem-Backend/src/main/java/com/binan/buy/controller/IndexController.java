@@ -20,7 +20,7 @@ public class IndexController {
     private IBusinessService iBusinessService;
 
     @GetMapping("/fullPage")
-    public IndexDto fullpage() {
+    public IndexDto fullPage() {
         List<Business> bss = iBusinessService.findAllBusiness();
         List<Types> bts = iBusinessService.findAllTypes();
         IndexDto indexDto=new IndexDto();

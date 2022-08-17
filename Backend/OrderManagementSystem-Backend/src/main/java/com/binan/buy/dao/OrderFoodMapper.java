@@ -10,7 +10,11 @@ import java.util.List;
 public interface OrderFoodMapper {
     public List<OrderOutput> selectOrderById(Integer id);
 
-    public void insertOrder(Order order);
+    public Integer insertOrder(Order order);
 
     public void insertFoodNum(Integer order_id,Integer food_id,Integer food_num);
+
+    public OrderOutput selectOrderByOrderId(Integer id);
+
+    public Boolean finishPay(Integer oid);
 }

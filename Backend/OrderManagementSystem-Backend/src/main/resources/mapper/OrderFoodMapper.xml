@@ -16,9 +16,9 @@
         <result property="businessId" column="business_id"/>
     </resultMap>
     <resultMap id="foodInfo" type="com.binan.buy.model.FoodNum">
+        <id column="food_id"/>
         <result property="num" column="food_num" javaType="Integer"/>
-        <association property="food" resultMap="foodMap"
-                     javaType="com.binan.buy.model.Food"/>
+        <association property="food" resultMap="foodMap" javaType="com.binan.buy.model.Food"/>
     </resultMap>
     <!--查询商家信息-->
     <resultMap id="businessInfo" type="com.binan.buy.model.Business">
@@ -65,6 +65,34 @@
                  left join order_food o on fo.id = o.order_id
                  left join food f on o.food_id = f.id
         where fo.userId = #{id}
+        order by order_id desc
+    </select>
+
+    <select id="selectOrderByOrderId" resultMap="orderOutput">
+        select fo.id           as order_id,
+               fo.userId       as user_id,
+               fo.address      as address,
+               fo.price        as price,
+               fo.pay          as payState,
+               b.id            as business_id,
+               b.name          as business_name,
+               b.img           as business_img,
+               b.rate          as rate,
+               b.startPrice    as startPrice,
+               b.deliveryPrice as deliveryPrice,
+               b.`explain`     as 'business_explain',
+               f.id            as food_id,
+               f.name          as food_name,
+               f.img           as food_img,
+               f.`explain`     as food_explain,
+               f.price         as food_price,
+               f.businessId    as business_id,
+               o.food_num      as food_num
+        from food_order fo
+                 left join business b on fo.businessId = b.id
+                 left join order_food o on fo.id = o.order_id
+                 left join food f on o.food_id = f.id
+        where fo.id = #{id}
     </select>
 
     <insert id="insertOrder" parameterType="com.binan.buy.model.Order" useGeneratedKeys="true" keyProperty="id">
@@ -75,6 +103,13 @@
         insert into order_food(order_id, food_id, food_num)
         values (#{order_id}, #{food_id}, #{food_num})
     </insert>
+    <update id="finishPay">
+        update food_order
+        set pay= 1
+        where id = #{oid}
+
+    </update>
+
 
 </mapper>
 

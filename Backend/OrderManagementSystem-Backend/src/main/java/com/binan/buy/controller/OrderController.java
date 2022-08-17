@@ -11,6 +11,7 @@ import com.binan.buy.service.IBusinessService;
 import com.binan.buy.service.IOrderService;
 import com.binan.buy.service.IOrder_foodService;
 import com.binan.buy.service.OrderService;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
@@ -31,9 +32,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+    @GetMapping("/getOrder")
+    public OrderOutput getOrder(Integer orderId){
+        return orderService.selectOrderByOrderId(orderId);
+    }
     // 前端向后端发送订单信息
     @PostMapping("/saveOrder")
-    public boolean saveOrder(@RequestBody Order order) {
+    public Integer saveOrder(@RequestBody Order order) {
         return orderService.insertOrder(order);
     }
 

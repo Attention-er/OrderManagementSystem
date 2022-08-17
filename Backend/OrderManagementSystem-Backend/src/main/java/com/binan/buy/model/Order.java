@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -26,5 +27,5 @@ public class Order {
     // 支付状态 0：未支付，1：已支付
     private Integer pay;
     // 存储食品及对应信息的map
-    private Map<Integer, Integer> foodInfoMap; // 接收前端返回的订单中所有商品id,num键值对
+    private List<FoodIdNum> foodIdNums; // 接收前端返回的订单中所有商品id,num键值对
 }

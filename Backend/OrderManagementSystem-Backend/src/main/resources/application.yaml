@@ -15,7 +15,7 @@ spring:
     username: root
     password: dijiaio14257A!
     hikari:
-      max-lifetime: 120000
+      max-lifetime: 1200000
   servlet:
     multipart:
       max-file-size: 50MB

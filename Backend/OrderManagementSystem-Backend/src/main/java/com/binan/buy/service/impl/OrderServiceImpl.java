@@ -1,6 +1,7 @@
 package com.binan.buy.service.impl;
 
 import com.binan.buy.dao.OrderFoodMapper;
+import com.binan.buy.model.FoodIdNum;
 import com.binan.buy.model.Order;
 import com.binan.buy.model.OrderOutput;
 import com.binan.buy.service.OrderService;
@@ -26,16 +27,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Boolean insertOrder(Order order) {
+    public Integer insertOrder(Order order) {
         try {
-            Set<Map.Entry<Integer, Integer>> entrySet = order.getFoodInfoMap().entrySet();
             orderFoodMapper.insertOrder(order);
-            for (Map.Entry<Integer, Integer> entry : entrySet) {
-                orderFoodMapper.insertFoodNum(order.getId(), entry.getKey(), entry.getValue());
+            for (FoodIdNum foodIdNum: order.getFoodIdNums()) {
+                orderFoodMapper.insertFoodNum(order.getId(), foodIdNum.getFoodId(), foodIdNum.getFoodNum());
             }
-            return Boolean.TRUE;
+            return order.getId();
         } catch (Exception e) {
-            return Boolean.FALSE;
+            return -1;
         }
+    }
+
+    @Override
+    public OrderOutput selectOrderByOrderId(Integer orderId){
+        return orderFoodMapper.selectOrderByOrderId(orderId);
     }
 }
