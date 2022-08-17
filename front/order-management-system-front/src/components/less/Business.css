@@ -11,6 +11,8 @@
 }
 .count-and-sub {
   display: flex;
+  justify-content: end;
+  align-items: center;
   width: 20%;
 }
 .business li .business-left el-image {

@@ -27,7 +27,6 @@
           <Remove @click="sub(food)"/>
         </el-icon>
         <span v-if="food.num !== 0">{{ food.num }}</span>
-
         <el-icon :size="20">
           <CirclePlus @click="count(food)"/>
         </el-icon>
