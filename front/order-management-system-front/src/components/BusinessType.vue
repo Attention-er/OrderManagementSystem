@@ -1,7 +1,7 @@
 <template>
   <ul class="business-type">
-    <li v-for="businessType in businessTypes">
-      <el-image :src="'http://192.168.1.6:8080/system/file/getFile?filename='+businessType.img"/>
+    <li @click="go_to_list(businessType.id)" v-for="businessType in props.businessTypes">
+      <el-image :src="'/img?filename='+businessType.img"/>
       <p>{{ businessType.name }}</p>
     </li>
   </ul>
@@ -9,16 +9,30 @@
 
 <script setup lang="ts">
 
-import {ref} from "vue";
+import {defineProps, ref} from "vue";
 import axios from "axios";
-const businessTypes = ref()
-const getBusiness = () => {
-  axios.get("index").then((res) => {
-    businessTypes.value = res.data.bts;
+import {useRouter} from "vue-router";
+
+const props = defineProps<{
+  businessTypes: any
+}>()
+// const businessTypes = ref()
+// const getBusiness = () => {
+//   axios.get("index").then((res) => {
+//     businessTypes.value = res.data.bts;
+//   })
+// }
+// getBusiness()
+const router = useRouter();
+const go_to_list = (typeId: number) => {
+  console.log(typeId)
+  router.push({
+    path: '/about',
+    query: {
+      typeId: typeId
+    }
   })
 }
-getBusiness()
-
 </script>
 
 <style lang="less" scoped>

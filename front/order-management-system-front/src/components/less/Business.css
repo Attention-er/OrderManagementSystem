@@ -9,10 +9,9 @@
   border-bottom-color: #AEAEAE;
   padding: 2vw 0;
 }
-.el-image {
-  width: 20vw;
-  height: 20vw;
-  margin: 0 3vw;
+.count-and-sub {
+  display: flex;
+  width: 20%;
 }
 .business li .business-left el-image {
   width: 20vw;
@@ -20,16 +19,21 @@
   margin: 0 3vw;
 }
 .business li .business-right {
+  margin-left: 2vw;
   width: 70vw;
 }
 .business li .business-right .businessHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1vw 0;
+  margin: 0 0;
+}
+.business li .business-right .businessHead h3 {
+  margin: 0 0;
 }
 .business li .business-right .businessHead p {
   font-size: larger;
+  margin: 0;
 }
 .business li .business-right .businessStar {
   display: flex;

@@ -5,25 +5,22 @@
     query:{
       business:JSON.stringify(business)
     }
-    })"  v-for="business in props.businesses">
-      <div class="business-left">
-        <!--        <el-image src="http://localhost:8080/system/image/getImage" />-->
-        <el-image :src="'/img?filename='+business.img" :alt="business.name"/>
-      </div>
+    })" v-for="business in props.businesses">
+      <el-badge :value="store.getters.getOrderTotalNum(business.id)"
+                :hidden="store.getters.getOrderTotalNum(business.id)===0" :max="10">
+        <div class="business-left">
+          <!--        <el-image src="http://localhost:8080/system/image/getImage" />-->
+          <el-image :src="'/img?filename='+business.img" :alt="business.name"/>
+        </div>
+      </el-badge>
       <div class="business-right">
         <div class="businessHead">
           <h3>{{ business.name }}</h3>
-          <p>
-            <font-awesome-icon :icon="['fas','mobile']"/>
-          </p>
         </div>
         <div class="businessStar">
           <div class="businessStarLeft">
             <el-rate disabled v-model="business.rate" allow-half/>
-            <p>{{ business.rate }} 月售{{ business.numberOfOrders }}</p>
-          </div>
-          <div class='businessStarRight'>
-            蜂鸟专送
+            <p>{{ business.rate }}</p>
           </div>
         </div>
         <div class='businessDeliver'>
@@ -31,27 +28,12 @@
             <i class="fa fa-jpy"></i>{{ business.startPrice }}起送 | <i
               class="fa fa-jpy"></i>{{ business.deliveryPrice }}配送
           </div>
-          <div class='businessDeliverRight'>
-            3.22km | 30分钟
-          </div>
         </div>
         <div class='businessExplain'>
           <span>{{ business.explain }}</span>
         </div>
-        <div class='businessNew'>
-          <div class='businessNewLeft'>
-            <div>新</div>
-            <p>饿了么新用户首单立减9元</p>
-          </div>
-          <div class='businessNewRight'>
-            两个活动<i class='fa fa-caret-down'></i>
-          </div>
-        </div>
-        <div class='businessTe'>
-          <div>特</div>
-          <p>特价商品5元起</p>
-        </div>
       </div>
+
     </li>
   </ul>
 </template>
@@ -59,12 +41,15 @@
 <script lang="ts" setup>
 import {ref, toRef, toRefs} from "vue";
 import axios from "axios";
-import {useRouter} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
+import {useStore} from "vuex";
 
+const route = useRoute();
+const router = useRouter();
+const store = useStore();
 const props = defineProps<{
   businesses: any
 }>()
-const router = useRouter();
 // const businesses = ref()
 // const getBusiness = () => {
 //   axios.get("index").then((res) => {

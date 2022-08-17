@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.9",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
@@ -15,6 +16,8 @@
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "element-plus": "^2.2.12",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
     "vue": "^3.0.0",
     "vue-axios": "^3.4.1",
     "vue-class-component": "^8.0.0-0",
