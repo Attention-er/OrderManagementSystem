@@ -27,22 +27,22 @@ class OrderManagementSystemApplicationTests {
 
     @Test
     void test01() {
-        Order order = new Order();
-        order.setBusinessId(10010);
-        order.setUserId(1);
-        order.setAddress("1998");
-        order.setPrice(19.98);
-        order.setPay(1);
-        Map<Integer, Integer> foodInfoMap = new HashMap<>();
-        foodInfoMap.put(1, 3);
-        foodInfoMap.put(2, 5);
-        order.setFoodInfoMap(foodInfoMap);
-        orderFoodMapper.insertOrder(order);
-        Set<Map.Entry<Integer, Integer>> entrySet = foodInfoMap.entrySet();
-        for (Map.Entry<Integer, Integer> entry : entrySet) {
-            orderFoodMapper.insertFoodNum(order.getId(),entry.getKey(),entry.getValue());
-        }
-        System.out.println(order.getId());
+//        Order order = new Order();
+//        order.setBusinessId(10010);
+//        order.setUserId(1);
+//        order.setAddress("1998");
+//        order.setPrice(19.98);
+//        order.setPay(1);
+//        Map<Integer, Integer> foodInfoMap = new HashMap<>();
+//        foodInfoMap.put(1, 3);
+//        foodInfoMap.put(2, 5);
+//        order.setFoodInfoMap(foodInfoMap);
+//        orderFoodMapper.insertOrder(order);
+//        Set<Map.Entry<Integer, Integer>> entrySet = foodInfoMap.entrySet();
+//        for (Map.Entry<Integer, Integer> entry : entrySet) {
+//            orderFoodMapper.insertFoodNum(order.getId(),entry.getKey(),entry.getValue());
+//        }
+//        System.out.println(order.getId());
     }
 
 }
