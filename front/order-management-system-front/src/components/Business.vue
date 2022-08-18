@@ -8,7 +8,7 @@
     })"  v-for="business in props.businesses">
       <div class="business-left">
         <!--        <el-image src="http://localhost:8080/system/image/getImage" />-->
-        <el-image :src="'/img?filename='+business.img" :alt="business.name"/>
+        <el-image :src="'/api/file/getFile?filename='+business.img" :alt="business.name"/>
       </div>
       <div class="business-right">
         <div class="businessHead">

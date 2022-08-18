@@ -13,7 +13,7 @@
         <p><font-awesome-icon :icon="['fas','file-text']"/></p>
         <p>订单</p>
       </li>
-      <li>
+      <li @click="router.push('/userView')">
         <p><font-awesome-icon :icon="['fas','user']"/></p>
         <p>我的</p>
       </li>

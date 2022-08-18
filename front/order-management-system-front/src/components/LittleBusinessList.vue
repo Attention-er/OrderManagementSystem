@@ -10,7 +10,7 @@
                 :hidden="store.getters.getOrderTotalNum(business.id)===0" :max="10">
         <div class="business-left">
           <!--        <el-image src="http://localhost:8080/system/image/getImage" />-->
-          <el-image :src="'/img?filename='+business.img" :alt="business.name"/>
+          <el-image :src="'/api/file/getFile?filename='+business.img" :alt="business.name"/>
         </div>
       </el-badge>
       <div class="business-right">

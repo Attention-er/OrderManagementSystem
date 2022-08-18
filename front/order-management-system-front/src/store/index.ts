@@ -3,10 +3,18 @@ import {createStore} from 'vuex'
 export default createStore({
     state: () => ({
         user: {},
-        userId: 1,
+        userId: -1,
         order_food_nums: []
     }),
     mutations: {
+        removeUser(state){
+          state.user = {};
+          state.userId = -1
+        },
+        updateUser(state, user) {
+            state.user = user;
+            state.userId = user.id
+        },
         count(state, food) {
             if (food.num == null || food.num == 0) {
                 state.order_food_nums.push({

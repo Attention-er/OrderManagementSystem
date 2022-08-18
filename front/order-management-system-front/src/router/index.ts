@@ -29,6 +29,11 @@ const routes: Array<RouteRecordRaw> = [
     path:'/orderView',
     name:'OrderView',
     component:()=> import('../views/OrderView.vue')
+  },
+  {
+    path:'/userView',
+    name:'UserView',
+    component:()=> import('../views/UserView.vue')
   }
 ]
 

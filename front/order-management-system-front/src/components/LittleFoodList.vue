@@ -4,7 +4,7 @@
 
       <el-badge :value="food.num" :hidden="food.num==null||food.num===0" :max="10">
         <div class="business-left">
-          <el-image :src="'/img?filename='+food.img" :alt="food.name"/>
+          <el-image :src="'/api/file/getFile?filename='+food.img" :alt="food.name"/>
         </div>
       </el-badge>
       <div class="business-right">
@@ -82,15 +82,24 @@ const saveData = () => {
   sessionStorage.setItem('order_food_nums', JSON.stringify(order_food_nums));
 }
 const count = (food: any) => {
-  store.commit('count', food)
-  const sum = store.getters.getOrderTotalNum(food.businessId);
-  saveData()
-  emit('update')
+  if (store.state.userId === -1) {
+    alert('您还未登录，请先登录！')
+    router.push('/userView')
+  } else {
+    store.commit('count', food)
+    saveData()
+    emit('update')
+  }
 }
 const sub = (food: any) => {
-  store.commit('subtraction', food)
-  saveData()
-  emit('update')
+  if (store.state.userId === -1) {
+    alert('您还未登录，请先登录！')
+    router.push('/userView')
+  } else {
+    store.commit('subtraction', food)
+    saveData()
+    emit('update')
+  }
 }
 </script>
 

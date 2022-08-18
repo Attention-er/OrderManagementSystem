@@ -1,7 +1,7 @@
 <template>
   <ul class="business-type">
     <li @click="go_to_list(businessType.id)" v-for="businessType in props.businessTypes">
-      <el-image :src="'/img?filename='+businessType.img"/>
+      <el-image :src="'/api/file/getFile?filename='+businessType.img"/>
       <p>{{ businessType.name }}</p>
     </li>
   </ul>
